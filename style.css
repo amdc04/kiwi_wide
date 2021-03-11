@@ -121,6 +121,7 @@ p.large {
     line-height: 34px;
     color: #444;
     font-weight: 200;
+    margin-top: 20px;
 }
 
 ol,
@@ -879,7 +880,7 @@ header .main_menu .nav-item.active a.nav-link {
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
-    padding: 22px 22px 22px ;
+    padding: 6px 20px 6px ;
 }
 
 .header-section {
@@ -993,8 +994,12 @@ header .main_menu .nav-item.active a.nav-link {
     margin-bottom: 25px;
 }
 
+.book-now{
+    float: right;
+}
+
 .site_information {
-    padding-top: 25px;
+    /* padding-top: 25px; */
 }
 
 .site_information ul {
@@ -1036,6 +1041,8 @@ header .main_menu .nav-item.active a.nav-link {
 .header_bottom_section {
     min-height: 70px;
     background: #fff;
+    border-top: 3px solid #72dd78;
+    border-bottom: 2px solid #72dd78;
 }
 
 .header_bottom_section .main_menu {
@@ -1106,6 +1113,10 @@ header .main_menu .nav-item.active a.nav-link {
     font-size: 16px;
     color: #eaeaea;
     font-weight: 300;
+}
+a{
+color: black;
+
 }
 
 /*-------------------------------------------------------------------
@@ -1538,6 +1549,15 @@ p.large_1 {
     text-align: center;
     color: #202120;
     font-weight: 500;
+}
+
+.product_blog.full{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product_blog.full img{
+    width: 100%;
 }
 
 /*-------------------------------------------------------------------
@@ -2635,7 +2655,7 @@ h4.font_themecolor {
 /**---- layout padding ----**/
 
 .layout_padding {
-    padding: 90px 0;
+    padding: 10px 0;
 }
 
 
@@ -2649,6 +2669,7 @@ h4.font_themecolor {
     width: auto;
     float: left;
     position: relative;
+    margin-top: 40px;
 }
 
 .heading_s1 h2::first-letter {
@@ -2723,7 +2744,7 @@ h4.font_themecolor {
 
 .about_img {
     margin-top: -30px;
-    margin-bottom: -1px;
+    margin-bottom: 40px;
 }
 
 /*-------------------------------------------------------------------
@@ -2905,6 +2926,10 @@ h4.font_themecolor {
     padding: 0;
     border: none;
     box-shadow: 0;
+}
+
+.visa-image{
+    margin: 0 auto;
 }
 
 /*-------------------------------------------------------------------
@@ -3123,6 +3148,7 @@ h3.price_tag {
 
 .dark-section, .footer {
     background: #171817;
+    padding: 40px 0;
 }
 
 .footer .widget-title {
@@ -3287,6 +3313,16 @@ h3.price_tag {
     color: #444;
 }
 
+.logo-footer{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer img{
+    margin-top: 10px;
+}
+
 /*-------------------------------------------------------------------
     19.copyright
 -------------------------------------------------------------------*/
@@ -3316,6 +3352,7 @@ h3.price_tag {
     align-items: center;
     justify-content: flex-start;
     text-align: left;
+    margin-top: 40px;
 }
 
 .page_title h2 {
