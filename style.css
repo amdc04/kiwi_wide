@@ -874,7 +874,7 @@ header .main_menu .nav-item.active a.nav-link {
     margin-left: 0.2em;
     margin-top: 0rem;
     vertical-align: middle;
-    content: "\f107";
+    content: "f107";
     border: 0;
     font-family: 'FontAwesome';
 }
