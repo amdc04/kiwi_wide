@@ -1039,7 +1039,7 @@ header .main_menu .nav-item.active a.nav-link {
 /**---- header bottom section ----**/
 
 .header_bottom_section {
-    min-height: 70px;
+    min-height: 60px;
     background: #fff;
     border-top: 3px solid #72dd78;
     border-bottom: 2px solid #72dd78;
@@ -1557,6 +1557,9 @@ p.large_1 {
 }
 
 .product_blog.full img{
+    width: 50%;
+}
+.product_blog.half img{
     width: 100%;
 }
 
