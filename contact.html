@@ -179,54 +179,53 @@
 
                      <div class="col-md-6">
                         <div class="form_cont">
-                           <form action="#" method="post" novalidate="novalidate" id="search-form" name="search-form">
+                           <form action="#" method="post" enctype="multipart/form-data" novalidate="novalidate" id="search-form" name="search-form">
 
                               <div class="field">
-                                 <input type="text" name="name" id="name" placeholder="Name" />
+                                 <input type="text" name="form_name" id="form_name" placeholder="Name" />
                               </div>
                               <div class="field">
-                                 <input type="text" name="addres" id="addres" placeholder="Addres" />
+                                 <input type="text" name="form_address" id="form_address" placeholder="Address" />
                               </div>
                               <div class="field">
-                                 <input type="email" name="email" id="email" placeholder="Email" />
+                                 <input type="email" name="form_email" id="form_email" placeholder="Email" />
                               </div>
                               <div class="field">
-                                 <input type="text" name="phone" id="phone" placeholder="Phone" />
+                                 <input type="text" name="form_phone" id="form_phone" placeholder="Phone" />
                               </div>
                               <div class="field">
-                                 <input type="text" name="date" id="date" placeholder="Date" />
+                                 <input type="text" name="form_date" id="form_date" placeholder="Date" />
                               </div>
                               <label style="font-size: 1.5em; color: #72dd78;">Type of query</label>
                               <br>
                               <div class="field" id="query" style="position: relative; display: inline-flex; ">
 
-                                 <input type="radio" id="q1" name="postage" style="width: 100px;" /> Meet up
-                                 <input type="radio" id="q2" name="postage" style="width: 100px;" /> Telephone
-                                 <input type="radio" id="q3" name="postage" style="width: 100px;" /> WhatsApp
-                                 <input type="radio" id="q4" name="postage" style="width: 100px;" /> Skype
-                                 <input type="radio" id="q5" name="postage" style="width: 100px;" /> Viber
+                                 <input type="radio" id="q1" name="form_postage" style="width: 100px;" /> Meet up
+                                 <input type="radio" id="q2" name="form_postage" style="width: 100px;" /> Telephone
+                                 <input type="radio" id="q3" name="form_postage" style="width: 100px;" /> WhatsApp
+                                 <input type="radio" id="q4" name="form_postage" style="width: 100px;" /> Skype
+                                 <input type="radio" id="q5" name="form_postage" style="width: 100px;" /> Viber
                               </div>
                               <label style="font-size: 1.5em; color: #72dd78;">"Which option best describes your
                                  situation?"</label>
                               <div class="field" id="pgts">
 
-                                 <input type="radio" id="o1" name="describe" style="width: 50px;" />
+                                 <input type="radio" id="o1" name="form_describe" style="width: 50px;" />
                                  <br> I require assistance from a licensed immigration adviser to prepare a visa
                                  application.<br>
-                                 <input type="radio" id="o2" name="describe" style="width: 50px;" /> <br>I am preparing
+                                 <input type="radio" id="o2" name="form_describe" style="width: 50px;" /> <br>I am preparing
                                  a visa application myself. I just need answers to a few questions..<br>
-                                 <input type="radio" id="o3" name="describe" style="width: 50px;" /> <br>My visa
+                                 <input type="radio" id="o3" name="form_describe" style="width: 50px;" /> <br>My visa
                                  application has already been submitted. I require assistance of a licensed immigration
                                  adviser to prepare a response to a letter received from Immigration New Zealand.<br>
-                                 <input type="radio" id="o4" name="describe" style="width: 50px;" /> <br>others
+                                 <input type="radio" id="o4" name="form_describe" style="width: 50px;" /> <br>others
                               </div>
                               <label style="font-size: 1.5em; color: #72dd78;">"Briefly explain the nature of your
                                  problem. You may wish to write exact questions that you have."</label>
-                              <div class="field">
-                                 <textarea placeholder="Questions" id="Questions"></textarea>
-                              </div>
+
+                              <textarea placeholder="Questions" id="preguntas" name="preguntas"></textarea>
                               <div class="col-md-6">
-                                 <input style="width: 500px;" type='file' name="file" id="file" />
+                                 <input style="width: 500px;" type='file' name="form_file" id="form_file" accept=".pdf,.doc" />
                               </div>
                               <label style="font-size: 1em;">"I consent to receive emails from KiwiWide immigration
                                  consultants at the email address provided on this form. All information collected on
@@ -296,7 +295,7 @@
       <!-- end footer -->
       <!-- Core JavaScript
          ================================================== -->
-      <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-1.12.1.min.js"></script>
       <script src="js/tether.min.js"></script>
       <script src="js/bootstrap.js"></script>
       <script src="js/parallax.js"></script>
@@ -304,6 +303,7 @@
       <script src="js/ekko-lightbox.js"></script>
       <script src="js/custom.js"></script>
       <script src="js/validate.js"></script>
+
 </body>
 
 </html>
