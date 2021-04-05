@@ -21,7 +21,7 @@
 	$datos = true;
 
 	$return_arr = array(
-		"message" => "Informacion almacenada en la base de datos ....",
+		"message" => "information stored in the database ....",
 		"name" => $name,
 		"address" => $address,
 		"email" => $email,
