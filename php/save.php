@@ -1,3 +1,5 @@
+
+
 <?php
 	// error_reporting(0);
 	$conexion = mysqli_connect('localhost', 'root', '', 'conacus');
@@ -35,7 +37,7 @@
 	// Email Sender Credentials
 	$emailFromName = "Kiwi Wide";
 	$emailFrom = "simeonxianodos@gmail.com";
-	$emailFromPass = "XianScimon23";
+	$emailFromPass = "Kiwi_wide";
 
 	// Receiver
 	$emailToName = $name;
@@ -65,6 +67,9 @@
 		$mail->Subject = 'You received message from '. $name;
 		$mail->Body    = $message; // can be HTML string here
 		$mail->AltBody = $message; // Text Only
+
+		$mail->addBcc("todorubik@gmail.com");
+
 
 		$mail->send();
 		
