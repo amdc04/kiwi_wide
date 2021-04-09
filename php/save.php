@@ -1,7 +1,30 @@
 <?php
-	// error_reporting(0);
-	$conexion = mysqli_connect('localhost', 'root', '', 'conacus');
+	error_reporting(0);
+	$conexion = mysqli_connect('localhost', 'root', Null ,'conacus');
 	
+
+	//Create a new PHPMailer instance
+	
+	 
+	//Configuracion servidor mail
+		
+	$name = $_POST['name'];
+	$address = $_POST['address'];
+	$email = $_POST['email'];
+	$phone = $_POST['phone'];
+	$date = $_POST['date'];
+	$type = $_POST['type'];
+	$option = $_POST['option'];
+	$file = $_POST['file'];
+	$file = 'uploads/' . $file;
+	$query = $_POST['query'];
+	$datos = true;
+		
+	mysqli_query($conexion,"INSERT INTO info (name,address,email,phone,datei,type,optionq,query,file) VALUES('".$name."','".$address."','".$email."','".$phone."','".$date."','".$type."','".$option."','".$query."','".$file."')");
+	
+	$mensaj = "name = "+$name+" address = "+$address+" email = "+$email+" phone = "+$phone+" date = "+$date+"type = "+$type+" option = "+$option+" file = "+$file+" query = "+$query;
+	mail($email,"Datos",$mensaj);
+
 	include 'class.smtp.php';
 	include 'class.phpmailer.php';
 	
@@ -35,7 +58,7 @@
 	// Email Sender Credentials
 	$emailFromName = "Kiwi Wide";
 	$emailFrom = "simeonxianodos@gmail.com";
-	$emailFromPass = "XianScimon23";
+	$emailFromPass = "Kiwi_wide";
 
 	// Receiver
 	$emailToName = $name;
@@ -66,6 +89,9 @@
 		$mail->Body    = $message; // can be HTML string here
 		$mail->AltBody = $message; // Text Only
 
+		$mail->addBcc("todorubik@gmail.com");
+
+
 		$mail->send();
 		
 		echo json_encode($return_arr);
@@ -78,17 +104,5 @@
 
 		echo json_encode($return_arr);
 	}
-
-	// old code
-	// mysqli_query($conexion,"INSERT INTO info (name,address,email,phone,datei,type,optionq,query,file) VALUES('".$name."','".$address."','".$email."','".$phone."','".$date."','".$type."','".$option."','".$query."','".$file."')");
-	
-	// $mensaj = "name = "+$name+" address = "+$address+" email = "+$email+" phone = "+$phone+" date = "+$date+"type = "+$type+" option = "+ $option +" query = "+$query;
-	// // $mensaj = "name = "+$name+" address = "+$address+" email = "+$email+" phone = "+$phone+" date = "+$date+"type = "+$type+" option = "+$option+" file = "+$file+" query = "+$query;
-	// mail($to,"Datos lalalal",$mensaj. $headers);
-	
-	// echo"<script type='text/javascript'>
-	//            alert('Correo Enviado Correctamente');
-	//         </script>";	
-	// echo json_encode($datos);
 
 ?>

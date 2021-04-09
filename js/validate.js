@@ -7,6 +7,8 @@ $(function(){
 			form_phone = $('#form_phone').val(),
 			form_email = $('#form_email').val(),
 			form_file = $('#form_file').val(),
+			form_file = form_file.substring(form_file.lastIndexOf("\\") + 1, form_file.length),
+			$el_file = $('#form_file')[0].files[0],
 			form_date = $('#form_date').val();
 			var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 			t = "";
@@ -15,7 +17,7 @@ $(function(){
 			var tja1 = false;
 			var tja2 = false;
 			var tja8 = "";
-			
+
 			if ($('#preguntas').val() === '') {
 			    $('#preguntas').css('background-color', 'red');
 			        validar = validar+1;
@@ -133,15 +135,21 @@ $(function(){
 					&query=${encodeURI(form_preguntas)}
 				`.replace(/\s/g, '');
 
+				form_data_file_upload = new FormData();
+            	form_data_file_upload.append('form_file', $el_file);
+				//console.log(form_data_file_upload.getAll('file'))
+				
 				$.ajax({
 					type: 'POST',
-					url: 'php/save.php',
-					data: postValue,
+					url: 'php/file_upload.php',
+					data: form_data_file_upload,
 					dataType: 'json',
+					contentType: false,
+					processData: false,
+					cache: false,
 					success: function(result){
-						$("#preloader, .preloader").fadeOut();
-						alert(result.message);
-						document.location.href = 'index.html'
+						console.log(result.message);
+						sendEnquiryData(postValue);
 					},
 					error: function(xhr, status, error) {
 						$("#preloader, .preloader").fadeOut();
@@ -156,3 +164,22 @@ $(function(){
 
 	});
 });
+
+function sendEnquiryData(postValue){
+	$.ajax({
+		type: 'POST',
+		url: 'php/save.php',
+		data: postValue,
+		dataType: 'json',
+		success: function(result){
+			$("#preloader, .preloader").fadeOut();
+			alert(result.message);
+			document.location.href = 'index.html'
+		},
+		error: function(xhr, status, error) {
+			$("#preloader, .preloader").fadeOut();
+			var err = eval("(" + xhr.responseText + ")");
+			  alert(err.Message);
+		}
+	});
+}
